@@ -7,3 +7,4 @@ npm run analyze || exit 1
 
 # Add changes from formatter
 git add -A
+npm run format || true && npm run analyze || exit 1 && git add -A
