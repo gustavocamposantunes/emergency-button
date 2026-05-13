@@ -1,0 +1,9 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Run formatter then analyze; if formatter changes files, add them before commit
+npm run format || true
+npm run analyze || exit 1
+
+# Add changes from formatter
+git add -A
