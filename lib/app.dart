@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'features/home/pages/home_page.dart';
 import 'features/skycast/skycast_page.dart';
 
 class EmergencyButtonApp extends StatelessWidget {
