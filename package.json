@@ -9,6 +9,7 @@
   },
   "scripts": {
     "prepare": "husky install",
+    "start": "flutter run",
     "format": "dart format .",
     "analyze": "flutter analyze --no-pub",
     "commitlint": "commitlint --config commitlint.config.js"
