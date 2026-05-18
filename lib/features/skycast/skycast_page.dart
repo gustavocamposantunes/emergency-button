@@ -1,13 +1,45 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
-class SkyCastPage extends StatelessWidget {
+import '../home/pages/home_page.dart';
+
+class SkyCastPage extends StatefulWidget {
   const SkyCastPage({super.key});
 
+  @override
+  State<SkyCastPage> createState() => _SkyCastPageState();
+}
+
+class _SkyCastPageState extends State<SkyCastPage> {
   static const Color _background = Color(0xFF0A0B0D);
   static const Color _surfaceElevated = Color(0xFF242428);
   static const Color _accentSoft = Color(0xFFFFB4B4);
   static const Color _accentPeach = Color(0xFFE8A89C);
   static const Color _line = Color(0xFF7A4848);
+
+  Timer? _holdTimer;
+
+  void _startHoldTimer() {
+    _holdTimer?.cancel();
+    _holdTimer = Timer(const Duration(seconds: 5), () {
+      if (!mounted) return;
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute<void>(builder: (BuildContext context) => const HomePage()),
+      );
+    });
+  }
+
+  void _cancelHoldTimer() {
+    _holdTimer?.cancel();
+    _holdTimer = null;
+  }
+
+  @override
+  void dispose() {
+    _cancelHoldTimer();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,10 +79,9 @@ class SkyCastPage extends StatelessWidget {
         ],
       ),
       body: GestureDetector(
-        onTap: () {
-          // Redireciona para a tela de emergência ao tocar em qualquer área neutra
-          Navigator.of(context).pop();
-        },
+        onTapDown: (_) => _startHoldTimer(),
+        onTapUp: (_) => _cancelHoldTimer(),
+        onTapCancel: () => _cancelHoldTimer(),
         behavior: HitTestBehavior.opaque,
         child: Container(
           decoration: const BoxDecoration(

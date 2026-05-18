@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'features/home/pages/home_page.dart';
+import 'features/skycast/skycast_page.dart';
 
 class EmergencyButtonApp extends StatelessWidget {
   const EmergencyButtonApp({super.key});
@@ -23,7 +24,7 @@ class EmergencyButtonApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: const SkyCastPage(),
     );
   }
 }
