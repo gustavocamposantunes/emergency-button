@@ -21,7 +21,7 @@ class BottomNavigation extends StatelessWidget {
         color: const Color(0xFF111113),
         border: Border(
           top: BorderSide(
-            color: AppColors.line.withOpacity(0.55),
+            color: AppColors.line.withValues(alpha: 0.55),
           ),
         ),
       ),

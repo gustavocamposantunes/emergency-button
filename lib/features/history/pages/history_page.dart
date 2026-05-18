@@ -107,7 +107,7 @@ class HistoryPage extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: AppColors.surfaceElevated,
                   borderRadius: BorderRadius.circular(18),
-                  border: Border.all(color: AppColors.line.withOpacity(0.35)),
+                  border: Border.all(color: AppColors.line.withValues(alpha: 0.35)),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -129,7 +129,7 @@ class HistoryPage extends StatelessWidget {
                           end: Alignment.bottomRight,
                           colors: [Color(0xFF101A25), Color(0xFF1D1A1A)],
                         ),
-                        border: Border.all(color: AppColors.line.withOpacity(0.25)),
+                        border: Border.all(color: AppColors.line.withValues(alpha: 0.25)),
                       ),
                       child: Stack(
                         children: [
@@ -138,7 +138,7 @@ class HistoryPage extends StatelessWidget {
                               opacity: 0.28,
                               child: CustomPaint(
                                 painter: _HistoryMapPainter(
-                                  lineColor: AppColors.accentSoft.withOpacity(0.22),
+                                  lineColor: AppColors.accentSoft.withValues(alpha: 0.22),
                                 ),
                               ),
                             ),
@@ -250,7 +250,7 @@ class _HistoryMapPainter extends CustomPainter {
     }
 
     final Paint markerPaint = Paint()
-      ..color = AppColors.accent.withOpacity(0.70)
+      ..color = AppColors.accent.withValues(alpha: 0.70)
       ..style = PaintingStyle.fill;
 
     canvas.drawCircle(Offset(size.width * 0.53, size.height * 0.45), 12, markerPaint);

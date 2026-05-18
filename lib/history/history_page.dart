@@ -7,7 +7,6 @@ class HistoryPage extends StatelessWidget {
   const HistoryPage({super.key});
 
   static const Color _background = Color(0xFF0A0B0D);
-  static const Color _surface = Color(0xFF1A1A1D);
   static const Color _surfaceElevated = Color(0xFF242428);
   static const Color _accent = Color(0xFFE53E3E);
   static const Color _accentSoft = Color(0xFFFFB4B4);
@@ -58,7 +57,7 @@ class HistoryPage extends StatelessWidget {
       decoration: BoxDecoration(
         color: background,
         borderRadius: BorderRadius.circular(999),
-        border: Border.all(color: _line.withOpacity(0.30)),
+        border: Border.all(color: _line.withValues(alpha: 0.30)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -92,7 +91,7 @@ class HistoryPage extends StatelessWidget {
       decoration: BoxDecoration(
         color: _surfaceElevated,
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: _line.withOpacity(0.35)),
+        border: Border.all(color: _line.withValues(alpha: 0.35)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -123,7 +122,7 @@ class HistoryPage extends StatelessWidget {
               const Spacer(),
               _buildStatusPill(
                 label: status,
-                background: statusColor.withOpacity(0.18),
+                background: statusColor.withValues(alpha: 0.18),
                 dotColor: statusColor,
               ),
             ],
@@ -142,7 +141,7 @@ class HistoryPage extends StatelessWidget {
                   style: OutlinedButton.styleFrom(
                     foregroundColor: Colors.white,
                     backgroundColor: const Color(0xFF38383B),
-                    side: BorderSide(color: _line.withOpacity(0.50), width: 1.5),
+                    side: BorderSide(color: _line.withValues(alpha: 0.50), width: 1.5),
                     minimumSize: const Size.fromHeight(64),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                   ),
@@ -155,7 +154,7 @@ class HistoryPage extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: const Color(0xFF2B2B2E),
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: _line.withOpacity(0.35)),
+                  border: Border.all(color: _line.withValues(alpha: 0.35)),
                 ),
                 child: const Icon(Icons.more_vert_rounded, color: _accentSoft, size: 34),
               ),
@@ -172,10 +171,10 @@ class HistoryPage extends StatelessWidget {
                 end: Alignment.bottomRight,
                 colors: [Color(0xFF122338), Color(0xFF1A1D24)],
               ),
-              border: Border.all(color: _line.withOpacity(0.25)),
+              border: Border.all(color: _line.withValues(alpha: 0.25)),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.15),
+                  color: Colors.black.withValues(alpha: 0.15),
                   blurRadius: 18,
                   offset: const Offset(0, 6),
                 ),
@@ -187,7 +186,7 @@ class HistoryPage extends StatelessWidget {
                   child: Opacity(
                     opacity: 0.24,
                     child: CustomPaint(
-                      painter: _HistoryMapPainter(lineColor: _accentSoft.withOpacity(0.24)),
+                      painter: _HistoryMapPainter(lineColor: _accentSoft.withValues(alpha: 0.24)),
                     ),
                   ),
                 ),
@@ -334,7 +333,7 @@ class HistoryPage extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: _surfaceElevated,
                   borderRadius: BorderRadius.circular(18),
-                  border: Border.all(color: _line.withOpacity(0.35)),
+                  border: Border.all(color: _line.withValues(alpha: 0.35)),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -356,7 +355,7 @@ class HistoryPage extends StatelessWidget {
                           end: Alignment.bottomRight,
                           colors: [Color(0xFF101A25), Color(0xFF1D1A1A)],
                         ),
-                        border: Border.all(color: _line.withOpacity(0.25)),
+                        border: Border.all(color: _line.withValues(alpha: 0.25)),
                       ),
                       child: Stack(
                         children: [
@@ -364,7 +363,7 @@ class HistoryPage extends StatelessWidget {
                             child: Opacity(
                               opacity: 0.28,
                               child: CustomPaint(
-                                painter: _HistoryMapPainter(lineColor: _accentSoft.withOpacity(0.22)),
+                                painter: _HistoryMapPainter(lineColor: _accentSoft.withValues(alpha: 0.22)),
                               ),
                             ),
                           ),
@@ -427,7 +426,7 @@ class HistoryPage extends StatelessWidget {
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           color: const Color(0xFF111113),
-          border: Border(top: BorderSide(color: _line.withOpacity(0.55))),
+          border: Border(top: BorderSide(color: _line.withValues(alpha: 0.55))),
         ),
         padding: const EdgeInsets.fromLTRB(14, 16, 14, 18),
         child: Row(
@@ -473,7 +472,7 @@ class _HistoryMapPainter extends CustomPainter {
     }
 
     final Paint markerPaint = Paint()
-      ..color = const Color(0xFFE53E3E).withOpacity(0.70)
+      ..color = const Color(0xFFE53E3E).withValues(alpha: 0.70)
       ..style = PaintingStyle.fill;
 
     canvas.drawCircle(Offset(size.width * 0.53, size.height * 0.45), 12, markerPaint);

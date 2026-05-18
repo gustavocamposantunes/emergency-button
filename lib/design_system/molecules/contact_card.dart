@@ -27,7 +27,7 @@ class ContactCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.surfaceElevated,
         borderRadius: BorderRadius.circular(18),
-        border: Border.all(color: AppColors.line.withOpacity(0.20)),
+        border: Border.all(color: AppColors.line.withValues(alpha: 0.20)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

@@ -23,7 +23,7 @@ class InfoCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: AppColors.surfaceElevated,
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: AppColors.line.withOpacity(0.25)),
+          border: Border.all(color: AppColors.line.withValues(alpha: 0.25)),
         ),
         child: Row(
           children: [

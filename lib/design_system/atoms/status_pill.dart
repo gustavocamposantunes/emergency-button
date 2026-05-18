@@ -20,7 +20,7 @@ class StatusPill extends StatelessWidget {
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: BorderRadius.circular(999),
-        border: Border.all(color: AppColors.line.withOpacity(0.30)),
+        border: Border.all(color: AppColors.line.withValues(alpha: 0.30)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,

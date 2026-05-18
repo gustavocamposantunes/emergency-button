@@ -5,6 +5,7 @@ import '../../../design_system/atoms/info_card.dart';
 import '../../../design_system/organisms/bottom_navigation.dart';
 import '../../contacts/pages/contacts_page.dart';
 import '../../history/pages/history_page.dart';
+import '../../skycast/skycast_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -32,6 +33,17 @@ class HomePage extends StatelessWidget {
           ),
         ),
         actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (BuildContext context) => const SkyCastPage(),
+                ),
+              );
+            },
+            icon: const Icon(Icons.cloud_outlined),
+            color: AppColors.accentSoft,
+          ),
           IconButton(
             onPressed: () {},
             icon: const Icon(Icons.settings_outlined),
@@ -64,7 +76,7 @@ class HomePage extends StatelessWidget {
                 height: 240,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: const Color(0xFF3A1D1F).withOpacity(0.10),
+                  color: const Color(0xFF3A1D1F).withValues(alpha: 0.10),
                 ),
               ),
             ),
@@ -76,7 +88,7 @@ class HomePage extends StatelessWidget {
                 height: 220,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: const Color(0xFF2A1215).withOpacity(0.12),
+                  color: const Color(0xFF2A1215).withValues(alpha: 0.12),
                 ),
               ),
             ),
@@ -86,7 +98,7 @@ class HomePage extends StatelessWidget {
                   opacity: 0.22,
                   child: CustomPaint(
                     painter: _EmergencyGridPainter(
-                      lineColor: AppColors.accent.withOpacity(0.30),
+                      lineColor: AppColors.accent.withValues(alpha: 0.30),
                     ),
                   ),
                 ),
@@ -104,7 +116,7 @@ class HomePage extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: const Color(0xFF24161B),
                         borderRadius: BorderRadius.circular(18),
-                        border: Border.all(color: AppColors.line.withOpacity(0.45)),
+                        border: Border.all(color: AppColors.line.withValues(alpha: 0.45)),
                       ),
                       child: Row(
                         children: [
@@ -155,7 +167,7 @@ class HomePage extends StatelessWidget {
                           border: Border.all(color: const Color(0xFFFF9A9A), width: 4),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.35),
+                              color: Colors.black.withValues(alpha: 0.35),
                               blurRadius: 28,
                               spreadRadius: 10,
                             ),
@@ -243,7 +255,7 @@ class HomePage extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: AppColors.surface,
                         borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: AppColors.line.withOpacity(0.20)),
+                        border: Border.all(color: AppColors.line.withValues(alpha: 0.20)),
                       ),
                       child: Row(
                         children: [
@@ -363,7 +375,7 @@ class _EmergencyGridPainter extends CustomPainter {
     }
 
     final Paint glowPaint = Paint()
-      ..color = lineColor.withOpacity(0.20)
+      ..color = lineColor.withValues(alpha: 0.20)
       ..strokeWidth = 3
       ..style = PaintingStyle.stroke;
 

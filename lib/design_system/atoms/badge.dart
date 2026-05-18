@@ -22,7 +22,7 @@ class AppBadge extends StatelessWidget {
           color: enabled ? const Color(0xFF3A3A3D) : AppColors.disabledBackground,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-            color: enabled ? Colors.transparent : AppColors.line.withOpacity(0.15),
+            color: enabled ? Colors.transparent : AppColors.line.withValues(alpha: 0.15),
           ),
         ),
         child: Row(

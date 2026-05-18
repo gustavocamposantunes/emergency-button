@@ -115,7 +115,7 @@ class ContactsPage extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: AppColors.surfaceElevated,
                   borderRadius: BorderRadius.circular(18),
-                  border: Border.all(color: AppColors.line.withOpacity(0.20)),
+                  border: Border.all(color: AppColors.line.withValues(alpha: 0.20)),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -150,7 +150,7 @@ class ContactsPage extends StatelessWidget {
                       child: Center(
                         child: Icon(
                           Icons.location_searching_outlined,
-                          color: AppColors.accentSoft.withOpacity(0.20),
+                          color: AppColors.accentSoft.withValues(alpha: 0.20),
                           size: 54,
                         ),
                       ),

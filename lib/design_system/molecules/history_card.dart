@@ -31,7 +31,7 @@ class HistoryCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.surfaceElevated,
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: AppColors.line.withOpacity(0.35)),
+        border: Border.all(color: AppColors.line.withValues(alpha: 0.35)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,7 +62,7 @@ class HistoryCard extends StatelessWidget {
               const Spacer(),
               StatusPill(
                 label: status,
-                backgroundColor: statusColor.withOpacity(0.18),
+                backgroundColor: statusColor.withValues(alpha: 0.18),
                 dotColor: statusColor,
               ),
             ],
@@ -82,7 +82,7 @@ class HistoryCard extends StatelessWidget {
                     foregroundColor: Colors.white,
                     backgroundColor: const Color(0xFF38383B),
                     side: BorderSide(
-                      color: AppColors.line.withOpacity(0.50),
+                      color: AppColors.line.withValues(alpha: 0.50),
                       width: 1.5,
                     ),
                     minimumSize: const Size.fromHeight(64),
@@ -99,7 +99,7 @@ class HistoryCard extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: const Color(0xFF2B2B2E),
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: AppColors.line.withOpacity(0.35)),
+                  border: Border.all(color: AppColors.line.withValues(alpha: 0.35)),
                 ),
                 child: Material(
                   color: Colors.transparent,
@@ -126,10 +126,10 @@ class HistoryCard extends StatelessWidget {
                 end: Alignment.bottomRight,
                 colors: [Color(0xFF122338), Color(0xFF1A1D24)],
               ),
-              border: Border.all(color: AppColors.line.withOpacity(0.25)),
+              border: Border.all(color: AppColors.line.withValues(alpha: 0.25)),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.15),
+                  color: Colors.black.withValues(alpha: 0.15),
                   blurRadius: 18,
                   offset: const Offset(0, 6),
                 ),
@@ -142,7 +142,7 @@ class HistoryCard extends StatelessWidget {
                     opacity: 0.24,
                     child: CustomPaint(
                       painter: _HistoryMapPainter(
-                        lineColor: AppColors.accentSoft.withOpacity(0.24),
+                        lineColor: AppColors.accentSoft.withValues(alpha: 0.24),
                       ),
                     ),
                   ),
@@ -211,7 +211,7 @@ class _HistoryMapPainter extends CustomPainter {
     }
 
     final Paint markerPaint = Paint()
-      ..color = AppColors.accent.withOpacity(0.70)
+      ..color = AppColors.accent.withValues(alpha: 0.70)
       ..style = PaintingStyle.fill;
 
     canvas.drawCircle(Offset(size.width * 0.53, size.height * 0.45), 12, markerPaint);

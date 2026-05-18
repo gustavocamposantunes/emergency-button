@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../home/home_page.dart';
 import '../history/history_page.dart';
 
 class ContactsPage extends StatelessWidget {
   const ContactsPage({super.key});
 
   static const Color _background = Color(0xFF0A0B0D);
-  static const Color _surface = Color(0xFF1A1A1D);
   static const Color _surfaceElevated = Color(0xFF242428);
   static const Color _accent = Color(0xFFE53E3E);
   static const Color _accentSoft = Color(0xFFFFB4B4);
@@ -59,7 +57,7 @@ class ContactsPage extends StatelessWidget {
         decoration: BoxDecoration(
           color: enabled ? const Color(0xFF3A3A3D) : const Color(0xFF17171A),
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: enabled ? Colors.transparent : _line.withOpacity(0.15)),
+          border: Border.all(color: enabled ? Colors.transparent : _line.withValues(alpha: 0.15)),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -96,7 +94,7 @@ class ContactsPage extends StatelessWidget {
       decoration: BoxDecoration(
         color: _surfaceElevated,
         borderRadius: BorderRadius.circular(18),
-        border: Border.all(color: _line.withOpacity(0.20)),
+        border: Border.all(color: _line.withValues(alpha: 0.20)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -281,7 +279,7 @@ class ContactsPage extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: _surfaceElevated,
                   borderRadius: BorderRadius.circular(18),
-                  border: Border.all(color: _line.withOpacity(0.20)),
+                  border: Border.all(color: _line.withValues(alpha: 0.20)),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -316,7 +314,7 @@ class ContactsPage extends StatelessWidget {
                       child: Center(
                         child: Icon(
                           Icons.location_searching_outlined,
-                          color: _accentSoft.withOpacity(0.20),
+                          color: _accentSoft.withValues(alpha: 0.20),
                           size: 54,
                         ),
                       ),
@@ -332,7 +330,7 @@ class ContactsPage extends StatelessWidget {
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           color: const Color(0xFF111113),
-          border: Border(top: BorderSide(color: _line.withOpacity(0.55))),
+          border: Border(top: BorderSide(color: _line.withValues(alpha: 0.55))),
         ),
         padding: const EdgeInsets.fromLTRB(14, 16, 14, 18),
         child: Row(
