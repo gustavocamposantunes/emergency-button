@@ -16,12 +16,10 @@ void main() {
   testWidgets('exibe a tela inicial', (WidgetTester tester) async {
     await tester.pumpWidget(const EmergencyButtonApp());
 
-    expect(find.text('Guardian SOS'), findsOneWidget);
-    expect(find.text('MODO DE EMERGÊNCIA\nATIVO'), findsOneWidget);
-    expect(find.text('Enviando alerta em 3s...'), findsOneWidget);
-    expect(find.text('CANCELAR ALERTA'), findsOneWidget);
-    expect(find.text('Sua Localização Atual'), findsOneWidget);
-    expect(find.text('Alerta'), findsOneWidget);
+    expect(find.text('SkyCast'), findsOneWidget);
+    expect(find.text('São Paulo'), findsOneWidget);
+    expect(find.text('24°C'), findsOneWidget);
+    expect(find.text('Parcialmente Nublado'), findsOneWidget);
   });
 
   testWidgets('abre a tela de contatos', (WidgetTester tester) async {
